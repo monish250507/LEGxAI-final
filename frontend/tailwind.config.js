@@ -1,0 +1,153 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  darkMode: ['class'],
+  content: [
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  prefix: "",
+  theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
+    extend: {
+      colors: {
+        // LexAI Black + Green Theme
+        black: '#000000',
+        'black-secondary': '#0a0a0a',
+        green: {
+          DEFAULT: '#00ff88',
+          50: '#00cc6a',
+          100: '#00ff88',
+          200: '#00ff88',
+          300: '#00ff88',
+          400: '#00ff88',
+          500: '#00ff88',
+          600: '#00ff88',
+          700: '#00ff88',
+          800: '#00ff88',
+          900: '#00ff88',
+        },
+        gray: {
+          50: '#f9fafb',
+          100: '#f3f4f6',
+          200: '#e5e7eb',
+          300: '#d1d5db',
+          400: '#9ca3af',
+          500: '#6b7280',
+          600: '#4b5563',
+          700: '#374151',
+          800: '#1f2937',
+          900: '#111827',
+        },
+        red: {
+          DEFAULT: '#ef4444',
+          50: '#fef2f2',
+          100: '#fee2e2',
+          200: '#fecaca',
+          300: '#fca5a5',
+          400: '#f87171',
+          500: '#ef4444',
+          600: '#dc2626',
+          700: '#b91c1c',
+          800: '#991b1b',
+          900: '#7f1d1d',
+        },
+        yellow: {
+          DEFAULT: '#f59e0b',
+          50: '#fffbeb',
+          100: '#fef3c7',
+          200: '#fde68a',
+          300: '#fcd34d',
+          400: '#fbbf24',
+          500: '#f59e0b',
+          600: '#d97706',
+          700: '#b45309',
+          800: '#92400e',
+          900: '#78350f',
+        },
+        blue: {
+          DEFAULT: '#3b82f6',
+          50: '#eff6ff',
+          100: '#dbeafe',
+          200: '#bfdbfe',
+          300: '#93c5fd',
+          400: '#60a5fa',
+          500: '#3b82f6',
+          600: '#2563eb',
+          700: '#1d4ed8',
+          800: '#1e40af',
+          900: '#1e3a8a',
+        },
+        border: '#1a1a1a',
+        input: '#0a0a0a',
+        ring: '#00ff88',
+        background: '#000000',
+        foreground: '#ffffff',
+        primary: {
+          DEFAULT: '#00ff88',
+          foreground: '#000000',
+        },
+        secondary: {
+          DEFAULT: '#0a0a0a',
+          foreground: '#ffffff',
+        },
+        destructive: {
+          DEFAULT: '#ef4444',
+          foreground: '#ffffff',
+        },
+        muted: {
+          DEFAULT: '#1a1a1a',
+          foreground: '#b3b3b3',
+        },
+        accent: {
+          DEFAULT: '#00cc6a',
+          foreground: '#ffffff',
+        },
+        popover: {
+          DEFAULT: '#0a0a0a',
+          foreground: '#ffffff',
+        },
+        card: {
+          DEFAULT: '#000000',
+          foreground: '#ffffff',
+        },
+      },
+      borderRadius: {
+        lg: "0.5rem",
+        md: "0.375rem",
+        sm: "0.25rem",
+      },
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        "glow": {
+          "0%, 100%": { boxShadow: "0 0 20px rgba(0, 255, 136, 0.5)" },
+          "50%": { boxShadow: "0 0 30px rgba(0, 255, 136, 0.8)" },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+        "glow": "glow 2s ease-in-out infinite",
+      },
+      boxShadow: {
+        'glow-green': '0 0 25px rgba(0, 255, 136, 0.4)',
+        'glow-green-strong': '0 0 30px rgba(0, 255, 136, 0.6)',
+      },
+    },
+  },
+  plugins: [require("tailwindcss-animate")],
+}

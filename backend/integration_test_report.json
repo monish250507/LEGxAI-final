@@ -1,0 +1,198 @@
+{
+  "summary": {
+    "total_tests": 31,
+    "passed": 30,
+    "failed": 1,
+    "success_rate": 96.7741935483871,
+    "duration": "0:00:36.507870"
+  },
+  "tests": [
+    {
+      "test": "API Key Available",
+      "status": "\u2705 PASS",
+      "details": "Key length: 73",
+      "timestamp": "2026-02-18T13:35:50.916579"
+    },
+    {
+      "test": ".env File Exists",
+      "status": "\u2705 PASS",
+      "details": "",
+      "timestamp": "2026-02-18T13:35:50.916579"
+    },
+    {
+      "test": "Data Directory Exists",
+      "status": "\u2705 PASS",
+      "details": "",
+      "timestamp": "2026-02-18T13:35:50.916579"
+    },
+    {
+      "test": "Constitution File: COI.json",
+      "status": "\u2705 PASS",
+      "details": "",
+      "timestamp": "2026-02-18T13:35:50.917565"
+    },
+    {
+      "test": "Constitution File: China_2018.json",
+      "status": "\u2705 PASS",
+      "details": "",
+      "timestamp": "2026-02-18T13:35:50.917565"
+    },
+    {
+      "test": "Constitution File: Japan_1946.json",
+      "status": "\u2705 PASS",
+      "details": "",
+      "timestamp": "2026-02-18T13:35:50.918451"
+    },
+    {
+      "test": "Constitution File: Russia_2014.json",
+      "status": "\u2705 PASS",
+      "details": "",
+      "timestamp": "2026-02-18T13:35:50.918451"
+    },
+    {
+      "test": "Constitution Matcher Initialized",
+      "status": "\u2705 PASS",
+      "details": "",
+      "timestamp": "2026-02-18T13:35:50.918451"
+    },
+    {
+      "test": "Constitutions Loaded",
+      "status": "\u2705 PASS",
+      "details": "",
+      "timestamp": "2026-02-18T13:35:50.919588"
+    },
+    {
+      "test": "Constitution Matching",
+      "status": "\u274c FAIL",
+      "details": "Found 0 matches",
+      "timestamp": "2026-02-18T13:35:50.920630"
+    },
+    {
+      "test": "Generative Service Initialized",
+      "status": "\u2705 PASS",
+      "details": "",
+      "timestamp": "2026-02-18T13:35:53.013575"
+    },
+    {
+      "test": "API Available",
+      "status": "\u2705 PASS",
+      "details": "",
+      "timestamp": "2026-02-18T13:35:53.013575"
+    },
+    {
+      "test": "API Validated",
+      "status": "\u2705 PASS",
+      "details": "",
+      "timestamp": "2026-02-18T13:35:53.013575"
+    },
+    {
+      "test": "Comprehensive Analysis",
+      "status": "\u2705 PASS",
+      "details": "Explanation length: 581",
+      "timestamp": "2026-02-18T13:36:05.832579"
+    },
+    {
+      "test": "Risk Assessment",
+      "status": "\u2705 PASS",
+      "details": "Risk level: medium",
+      "timestamp": "2026-02-18T13:36:05.833584"
+    },
+    {
+      "test": "Performance Optimizer Initialized",
+      "status": "\u2705 PASS",
+      "details": "",
+      "timestamp": "2026-02-18T13:36:05.834580"
+    },
+    {
+      "test": "Initial Cache Check",
+      "status": "\u2705 PASS",
+      "details": "",
+      "timestamp": "2026-02-18T13:36:05.835594"
+    },
+    {
+      "test": "Embedding Caching",
+      "status": "\u2705 PASS",
+      "details": "",
+      "timestamp": "2026-02-18T13:36:05.835594"
+    },
+    {
+      "test": "Performance Statistics",
+      "status": "\u2705 PASS",
+      "details": "Hit rate: 50.0%",
+      "timestamp": "2026-02-18T13:36:05.836579"
+    },
+    {
+      "test": "Document Analysis Service Initialized",
+      "status": "\u2705 PASS",
+      "details": "",
+      "timestamp": "2026-02-18T13:36:05.838577"
+    },
+    {
+      "test": "Document Analysis Completed",
+      "status": "\u2705 PASS",
+      "details": "Clauses found: 1",
+      "timestamp": "2026-02-18T13:36:27.099146"
+    },
+    {
+      "test": "Comprehensive Clause Analysis",
+      "status": "\u2705 PASS",
+      "details": "Risk level: unknown",
+      "timestamp": "2026-02-18T13:36:27.101151"
+    },
+    {
+      "test": "Chatbot Service Initialized",
+      "status": "\u2705 PASS",
+      "details": "",
+      "timestamp": "2026-02-18T13:36:27.104258"
+    },
+    {
+      "test": "Session Creation",
+      "status": "\u2705 PASS",
+      "details": "",
+      "timestamp": "2026-02-18T13:36:27.105417"
+    },
+    {
+      "test": "Message Handling",
+      "status": "\u2705 PASS",
+      "details": "Messages: 1",
+      "timestamp": "2026-02-18T13:36:27.107418"
+    },
+    {
+      "test": "Document Summary",
+      "status": "\u2705 PASS",
+      "details": "Clauses: 1",
+      "timestamp": "2026-02-18T13:36:27.109444"
+    },
+    {
+      "test": "Session Cleanup",
+      "status": "\u2705 PASS",
+      "details": "",
+      "timestamp": "2026-02-18T13:36:27.110417"
+    },
+    {
+      "test": "Main App Import",
+      "status": "\u2705 PASS",
+      "details": "",
+      "timestamp": "2026-02-18T13:36:27.419451"
+    },
+    {
+      "test": "Upload Router",
+      "status": "\u2705 PASS",
+      "details": "",
+      "timestamp": "2026-02-18T13:36:27.419451"
+    },
+    {
+      "test": "Chatbot Router",
+      "status": "\u2705 PASS",
+      "details": "",
+      "timestamp": "2026-02-18T13:36:27.420453"
+    },
+    {
+      "test": "App Configuration",
+      "status": "\u2705 PASS",
+      "details": "Title: Legal AI API",
+      "timestamp": "2026-02-18T13:36:27.420453"
+    }
+  ],
+  "timestamp": "2026-02-18T13:36:27.423446"
+}
