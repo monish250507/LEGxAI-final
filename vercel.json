@@ -3,4 +3,7 @@
   "buildCommand": "next build",
   "outputDirectory": ".next"
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 745536b4bf848c26743652f67c890495b682e022

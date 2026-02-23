@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    @apply border-gray-800;
+  }
+  body {
+    @apply bg-black text-white;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  /* Custom LexAI Components */
+  .lexai-glow {
+    @apply shadow-[0_0_25px_rgba(0,255,136,0.4)];
+  }
+  
+  .lexai-glow-strong {
+    @apply shadow-[0_0_30px_rgba(0,255,136,0.6)];
+  }
+
+  .lexai-border {
+    @apply border-green-500;
+  }
+
+  .lexai-border-hover {
+    @apply border-green-400;
+  }
+
+  .lexai-bg {
+    @apply bg-black;
+  }
+
+  .lexai-bg-secondary {
+    @apply bg-gray-900;
+  }
+
+  .lexai-text {
+    @apply text-white;
+  }
+
+  .lexai-text-secondary {
+    @apply text-gray-400;
+  }
+
+  .lexai-text-green {
+    @apply text-green-400;
+  }
+}
+
+/* Custom scrollbar for dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-green-500;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #374151 #1f2937;
+}
+
+/* Selection colors */
+::selection {
+  @apply bg-green-500 text-black;
+}
+
+::-moz-selection {
+  @apply bg-green-500 text-black;
+}

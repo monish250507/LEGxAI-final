@@ -15,6 +15,12 @@ requests
 pytesseract
 Pillow
 opencv-python
+<<<<<<< HEAD
 torch
 
 
+=======
+
+torch
+scikit-learn
+>>>>>>> 745536b4bf848c26743652f67c890495b682e022

@@ -1,0 +1,24 @@
+SAMPLE LEGAL CONTRACT
+
+This agreement is made between Party A and Party B on January 1, 2024.
+
+TERMINATION CLAUSE
+Either party may terminate this agreement upon thirty (30) days written notice to the other party. Termination shall be effective upon receipt of such notice.
+
+LIABILITY CLAUSE
+The parties shall be liable for any damages caused by their breach of this agreement. The maximum liability shall not exceed the total contract value.
+
+INDEMNITY CLAUSE
+The indemnifying party shall defend and indemnify the other party against any third-party claims arising from the performance of this agreement.
+
+JURISDICTION CLAUSE
+This agreement shall be governed by the laws of the State of California. Any disputes shall be resolved in the appropriate courts of California.
+
+CONFIDENTIALITY CLAUSE
+All information shared between the parties shall remain confidential and shall not be disclosed to any third parties without prior written consent.
+
+PAYMENT CLAUSE
+Payment shall be made within thirty (30) days of receipt of invoice. All payments shall be made in US dollars.
+
+GENERAL PROVISIONS
+This agreement constitutes the entire understanding between the parties. No modifications shall be effective unless in writing and signed by both parties.
