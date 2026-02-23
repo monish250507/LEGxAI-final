@@ -22,6 +22,28 @@ interface AnalysisData {
   filename: string;
   clauses: Clause[];
   document_text?: string;
+  strategic_intelligence?: {
+    case_summary: string;
+    case_type: string;
+    core_legal_issue: string;
+    jurisdiction: string;
+    primary_risk_domain: string;
+    constitutional_articles_triggered: string[];
+    primary_risk_domain: string;
+    risk_strength_index: number;
+    risk_category: "low" | "moderate" | "high";
+    ai_confidence: number;
+    risk_distribution: {
+      high: number;
+      medium: number;
+      low: number;
+    };
+    strength_comparison: {
+      offensive_strength: number;
+      defensive_strength: number;
+    };
+    strategic_recommendations: string[];
+  };
 }
 
 interface ChatMessage {
@@ -484,7 +506,99 @@ Please select a clause or ask a more specific question!`,
           <div className="mb-4">
             <h2 className="text-green-400 font-bold text-lg mb-4">Document Viewer</h2>
             
-            {/* Document Content with Highlights */}
+            {/* Strategic Intelligence Summary */}
+          {analysisData.strategic_intelligence && (
+            <div className="bg-black border border-green-800 rounded-lg p-6 mb-6">
+              <div className="border-b border-green-700 pb-4 mb-4">
+                <h2 className="text-green-400 font-bold text-xl mb-4">Strategic Intelligence Summary</h2>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                  {/* Case Overview */}
+                  <div className="bg-gray-950 rounded-lg p-4 border border-green-800">
+                    <h3 className="text-green-400 font-semibold text-lg mb-3">Case Overview</h3>
+                    <div className="space-y-2">
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-400">Case Type:</span>
+                        <span className="text-white font-medium">{analysisData.strategic_intelligence.case_type}</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-400">Core Legal Issue:</span>
+                        <span className="text-white font-medium">{analysisData.strategic_intelligence.core_legal_issue}</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-400">Jurisdiction:</span>
+                        <span className="text-white font-medium">{analysisData.strategic_intelligence.jurisdiction}</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-400">Primary Risk Domain:</span>
+                        <span className="text-white font-medium">{analysisData.strategic_intelligence.primary_risk_domain}</span>
+                      </div>
+                    </div>
+                    
+                    <div className="mt-4">
+                      <h4 className="text-green-400 font-medium mb-2">Executive Summary</h4>
+                      <p className="text-white text-sm leading-relaxed">{analysisData.strategic_intelligence.case_summary}</p>
+                    </div>
+                    
+                    <div className="mt-4">
+                      <h4 className="text-green-400 font-medium mb-2">Constitutional Articles Triggered</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {analysisData.strategic_intelligence.constitutional_articles_triggered.map((article, index) => (
+                          <span key={index} className="bg-green-950 text-green-400 px-2 py-1 rounded text-xs font-mono">
+                            Article {article}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Risk Strength Index */}
+                  <div className="bg-gray-950 rounded-lg p-4 border border-green-800">
+                    <h3 className="text-green-400 font-semibold text-lg mb-3">Risk Strength Index</h3>
+                    <div className="space-y-4">
+                      <div className="flex justify-between items-center mb-4">
+                        <span className="text-gray-400">Risk Strength Index:</span>
+                        <div className="flex items-center">
+                          <div className="text-3xl font-bold text-green-400">{(analysisData.strategic_intelligence.risk_strength_index * 100).toFixed(0)}%</div>
+                          <div className="text-gray-500 text-sm ml-2">/ 100%</div>
+                        </div>
+                      </div>
+                      
+                      <div className="flex justify-between items-center mb-4">
+                        <span className="text-gray-400">Risk Category:</span>
+                        <div className={`px-3 py-1 rounded text-sm font-semibold ${
+                          analysisData.strategic_intelligence.risk_category === 'high' ? 'bg-red-900' :
+                          analysisData.strategic_intelligence.risk_category === 'moderate' ? 'bg-yellow-900' : 'bg-green-900'
+                        }`}>
+                          <span className="text-white">
+                            {analysisData.strategic_intelligence.risk_category === 'high' ? 'High Exposure' :
+                             analysisData.strategic_intelligence.risk_category === 'moderate' ? 'Moderate Exposure' : 'Low Exposure'}
+                          </span>
+                        </div>
+                      </div>
+                      
+                      <div className="flex justify-between items-center mb-4">
+                        <span className="text-gray-400">AI Confidence:</span>
+                        <div className="flex items-center">
+                          <div className="text-3xl font-bold text-green-400">{(analysisData.strategic_intelligence.ai_confidence * 100).toFixed(0)}%</div>
+                          <div className="text-gray-500 text-sm ml-2">AI Confidence</div>
+                        </div>
+                      </div>
+                      
+                      {/* Progress Bar */}
+                      <div className="w-full bg-gray-800 rounded-full h-3">
+                        <div 
+                          className="bg-gradient-to-r from-green-600 to-green-400 h-full rounded-full transition-all duration-500"
+                          style={{ width: `${analysisData.strategic_intelligence.ai_confidence * 100}%` }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          )}
+
+          {/* Document Content with Highlights */}
             <div className="bg-black border border-green-800 rounded-lg p-6">
               <div className="space-y-4">
                 {analysisData.clauses.map((clause, index) => (
@@ -604,6 +718,21 @@ Please select a clause or ask a more specific question!`,
                     <p className="text-gray-300 leading-relaxed text-sm">
                       {selectedClause.defensive_analysis}
                     </p>
+                  </div>
+                )}
+
+                {/* Strategic Recommendations */}
+                {analysisData.strategic_intelligence?.strategic_recommendations && (
+                  <div>
+                    <h4 className="text-green-400 font-medium mb-3">Strategic Recommendations</h4>
+                    <div className="space-y-2">
+                      {analysisData.strategic_intelligence.strategic_recommendations.map((recommendation, index) => (
+                        <div key={index} className="flex items-start gap-3 p-3 bg-gray-950 rounded-lg border border-green-800">
+                          <span className="text-green-400 text-sm">●</span>
+                          <span className="text-white text-sm">{recommendation}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 )}
 
