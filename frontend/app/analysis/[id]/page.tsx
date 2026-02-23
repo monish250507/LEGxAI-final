@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
+import RiskDistributionChart from '@/src/components/RiskDistributionChart';
+import StrengthComparisonChart from '@/src/components/StrengthComparisonChart';
 
 interface Clause {
   clause_id: string;
@@ -29,9 +31,8 @@ interface AnalysisData {
     jurisdiction: string;
     primary_risk_domain: string;
     constitutional_articles_triggered: string[];
-    primary_risk_domain: string;
     risk_strength_index: number;
-    risk_category: "low" | "moderate" | "high";
+    risk_category: 'low' | 'moderate' | 'high';
     ai_confidence: number;
     risk_distribution: {
       high: number;
@@ -280,7 +281,35 @@ export default function AnalysisPage() {
           status: 'success',
           filename: isLargeDocument ? 'Service_Contract_15_Clauses.pdf' : 'Employment_Agreement_8_Clauses.pdf',
           clauses: allClauses,
-          document_text: 'Full document text would appear here...'
+          document_text: 'Full document text would appear here...',
+          strategic_intelligence: {
+            case_summary: `Mixed-risk case with ${allClauses.filter(c => c.risk_level === 'high').length} high-risk clauses among ${allClauses.length} total provisions requiring careful review.`,
+            case_type: 'Employment Termination',
+            core_legal_issue: 'Termination compliance and notice period requirements',
+            jurisdiction: 'Multi-jurisdictional (US/International applicable)',
+            primary_risk_domain: 'Employment Law',
+            constitutional_articles_triggered: ['21', '19', '14'],
+            risk_strength_index: 0.68,
+            risk_category: 'moderate',
+            ai_confidence: 0.85,
+            risk_distribution: {
+              high: allClauses.filter(c => c.risk_level === 'high').length,
+              medium: allClauses.filter(c => c.risk_level === 'medium').length,
+              low: allClauses.filter(c => c.risk_level === 'low').length
+            },
+            strength_comparison: {
+              offensive_strength: 0.75,
+              defensive_strength: 0.45
+            },
+            strategic_recommendations: [
+              'Legal review recommended for moderate-risk provisions',
+              'Request modifications to unclear or unfavorable terms',
+              'Negotiate for more balanced risk allocation',
+              'Ensure compliance with applicable labor laws',
+              'Document any agreed modifications in writing',
+              'Consider time limitations on restrictive clauses'
+            ]
+          }
         };
         setAnalysisData(mockData);
       } catch (error) {
@@ -732,6 +761,25 @@ Please select a clause or ask a more specific question!`,
                           <span className="text-white text-sm">{recommendation}</span>
                         </div>
                       ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Visualization Panel */}
+                {analysisData.strategic_intelligence && (
+                  <div className="bg-black border border-green-800 rounded-lg p-6 mb-6">
+                    <h3 className="text-green-400 font-semibold text-lg mb-4">Risk Visualization</h3>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                      {/* Risk Distribution Chart */}
+                      <div className="bg-gray-950 rounded-lg p-4 border border-green-800">
+                        <RiskDistributionChart data={analysisData.strategic_intelligence.risk_distribution} />
+                      </div>
+                      
+                      {/* Strength Comparison Chart */}
+                      <div className="bg-gray-950 rounded-lg p-4 border border-green-800">
+                        <StrengthComparisonChart data={analysisData.strategic_intelligence.strength_comparison} />
+                      </div>
                     </div>
                   </div>
                 )}

@@ -2,11 +2,34 @@
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
 
+export interface StrategicIntelligence {
+  case_summary: string;
+  case_type: string;
+  core_legal_issue: string;
+  jurisdiction: string;
+  primary_risk_domain: string;
+  constitutional_articles_triggered: string[];
+  risk_strength_index: number;
+  risk_category: 'low' | 'moderate' | 'high';
+  ai_confidence: number;
+  risk_distribution: {
+    high: number;
+    medium: number;
+    low: number;
+  };
+  strength_comparison: {
+    offensive_strength: number;
+    defensive_strength: number;
+  };
+  strategic_recommendations: string[];
+}
+
 export interface UploadResponse {
   status: string;
   filename: string;
   document_id: string;
   clauses?: any[];
+  strategic_intelligence?: StrategicIntelligence;
   message?: string;
 }
 
