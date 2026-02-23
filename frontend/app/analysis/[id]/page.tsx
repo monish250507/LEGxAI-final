@@ -619,7 +619,7 @@ Please select a clause or ask a more specific question!`,
                         <div 
                           className="bg-gradient-to-r from-green-600 to-green-400 h-full rounded-full transition-all duration-500"
                           style={{ width: `${analysisData.strategic_intelligence.ai_confidence * 100}%` }}
-                        />
+                        ></div>
                       </div>
                     </div>
                   </div>
