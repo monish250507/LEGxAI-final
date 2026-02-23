@@ -755,7 +755,7 @@ Please select a clause or ask a more specific question!`,
                   <div>
                     <h4 className="text-green-400 font-medium mb-3">Strategic Recommendations</h4>
                     <div className="space-y-2">
-                      {analysisData.strategic_intelligence.strategic_recommendations.map((recommendation, index) => (
+                      {analysisData.strategic_intelligence?.strategic_recommendations.map((recommendation, index) => (
                         <div key={index} className="flex items-start gap-3 p-3 bg-gray-950 rounded-lg border border-green-800">
                           <span className="text-green-400 text-sm">●</span>
                           <span className="text-white text-sm">{recommendation}</span>
