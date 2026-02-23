@@ -625,6 +625,7 @@ Please select a clause or ask a more specific question!`,
                   </div>
                 </div>
               </div>
+            </div>
           )}
 
           {/* Document Content with Highlights */}
